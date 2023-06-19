@@ -1,7 +1,6 @@
 # Projet Kinesio - Site Vitrine pour une Kinésiologue
 
 ![Capture d'écran du site en format desktop](./image/SiteKinesioDesktop.jpg)
-![Capture d'écran du site en format mobile](./image/SiteKinesioTel.jpg)
 
 Ce projet représente mon premier effort en conditions professionnelles et consiste en la création d’un site vitrine pour une kinésiologue. Ce fut l’occasion d’appliquer mes compétences dans le développement de sites web tout en découvrant de nouvelles technologies et en suivant un cahier des charges strict.
 
