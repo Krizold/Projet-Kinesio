@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kinésiologue dans les Deux-Sèvres, mon cabinet est situé à St Maixent l'Ecole . Venez découvrir les bienfaits de la kinésiologie et n'hésitez pas à me contacter.">
+    <title>Cécile Calvino - Kinésiologue</title>
+    <link rel="icon" href="./image/LOGO_C-removebg-preview_1.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+    <!--Start API OpenStreet  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!--End API OpenStreet  -->
+    <!-- AOS (Animate on Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="custom-navbar px-6 py-2 sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center custom-logo-container">
+                <a href="#">
+                    <img src="/image/logoSimple.png" alt="Logo" class="custom-logo">
+                </a>
+                <div>
+                    <h1 class="vanilla-ravioli custom-navbar-title larger-title">Cécile Calvino</h1>
+                </div>
+            </div>
+
+            <div id="menuBurger" class="burger flex justify-end" onclick="ouvrirNav()">
+                <img src="/image/menu.png" alt="Menu Burger" />
+            </div>
+
+            <div class="menuDesktop">
+                <ul class="flex items-center space-x-4 custom-navbar-list ">
+                    <li>
+                        <a href="#presentation"
+                            class="brandonthinTitle custom-navbar-link  larger-title">Présentation</a>
+                    </li>
+                    <li>
+                        <a href="#prestations" class="brandonthinTitle custom-navbar-link larger-title">Prestations</a>
+                    </li>
+                    <li>
+                        <a href="#ou-me-trouver" class="brandonthinTitle custom-navbar-link larger-title">Où me trouver
+                            ?</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="brandonthinTitle custom-navbar-link larger-title">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="maNavLaterale" class="navLaterale">
+            <a href="javascript:void(0)" class="fermerbtn custom-close-btn" onclick="fermerNav()">&times;</a>
+            <a href="#presentation" class="brandonthinTitle custom-sidebar-link">Présentation</a>
+            <a href="#prestations" class="brandonthinTitle custom-sidebar-link">Prestations</a>
+            <a href="#ou-me-trouver" class="brandonthinTitle custom-sidebar-link">Où me trouver?</a>
+            <a href="#contact" class="brandonthinTitle custom-sidebar-link">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- Section "Photo" -->
+    <section id="photo" class="photo-section py-20 px-6" data-aos="fade-up">
+        <div class="container mx-auto text-center">
+            <!-- Photo du kinésiologue -->
+            <div class="photo-container w-full mb-6">
+                <img src="./image/profile.jpg" alt="Photo de la kinésiologue"
+                    class="kinesio-photo profile-photo mx-auto object-cover rounded-full" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Section "Présentation" -->
+    <section id="presentation" class="presentation-section py-20 px-6 bg-white" data-aos="fade-up">
+        <div class="container mx-auto">
+            <div class="description-container w-full md:w-1/2 mx-auto">
+                <h2 class="presentation-title mb-6 brandonthinTitle larger-h2 text-center">Présentation</h2>
+                <div class="text-container">
+                    <p class="presentation-text mt-2 text-justify brandonthin text-center">
+                        Bonjour et bienvenue sur mon site ! Je vous accompagne et vous guide dans l’écoute de votre
+                        corps et la libération des stress et émotions grâce à la kinésiologie.
+                    </p>
+
+                    <p class="presentation-text mt-2 text-justify brandonthin text-center">En formation depuis février
+                        2022 et avec plus de 400h de
+                        formation à ce jour, j’ai effectué l’intégralité des modules obligatoires. En attendant de
+                        finaliser mes options qui me permettront d’approfondir certains domaines qui me tiennent à
+                        cœur, je vous propose des séances à un tarif préférentiel afin de vous faire découvrir ma
+                        pratique de la kinésiologie.</p>
+                </div>
+
+                <!-- Lien "En savoir plus" et "Contactez-moi" -->
+                <div class="flex justify-center mt-4">
+                    <a href="tel:0667660649" class="underline brandonthin larger-text">Contactez-moi</a>
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Section "Prestations" -->
+    <section id="prestations" class="prestations-section py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="prestations-title mb-6 brandonthinTitle larger-h2 text-center">Prestations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Bloc de prestation 1 -->
+                <div class="prestation-block bg-white shadow p-6 rounded-lg">
+                    <h3 class="brandonthinTitle larger-title text-center">Séance de kinésiologie</h3>
+                    <p class="prestation-text mt-2 text-gray-600 brandonthin larger-text text-center">Pour les adultes
+                        et adolescents</p><br />
+                    <p class="prestation-text mt-2 text-gray-600 brandonthin larger-text text-center">(Pour les enfants,
+                        je vous propose que nous discutions de votre problématique)</p>
+                    <p class="mt-4 font-semibold brandonthin larger-text text-center">Tarif découverte : <del>60 €</del> 45 €</p>
+                    <p class="mt-4 font-semibold brandonthin larger-text text-center">Durée : entre 1h15 et 1h30</p>
+                    <br />
+                    <div class="text-center">
+                        <a href="#" class="underline brandonthin larger-text" id="openModal">En savoir plus</a>
+                    </div>
+                </div>
+
+                <!-- Bloc de prestation 2 -->
+                <div class="prestation-block bg-white shadow p-6 rounded-lg">
+                    <h3 class="brandonthinTitle larger-title text-center">Réflexologie Crânio-sacrée</h3>
+                    <p class="prestation-text mt-2 text-gray-600 brandonthin larger-text text-center">Pour les adultes
+                        et adolescents</p><br />
+                    <p class="prestation-text mt-2 text-gray-600 brandonthin larger-text text-center">(Pour les enfants,
+                        je vous propose que nous discutions de votre problématique)</p>
+                    <p class="mt-4 font-semibold brandonthin larger-text text-center">Septembre 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modale "En savoir plus" -->
+    <div id="moreInfoModal" class="modal">
+        <div class="modal-content  ">
+            <span class="close text-2xl">&times;</span>
+            <h2 class="modal-title font-semibold mb-4 brandonthinTitle text-center">En savoir plus sur la Kinésiologie</h2>
+            <div class="modal-scroll-content"> <!-- Contenu défilant -->
+                <br>
+                <p class="modal-text brandonthin">Il s’agit d’une <strong>technique
+                    d’accompagnement</strong> issue de la chiropraxie et de la médecine traditionnelle chinoise.
+                    Grâce à une <strong>approche globale qui prend en compte le langage du corps et ses mémoires</strong>, cette
+                    pratique douce permet de libérer les stress et d’agir sur les blocages, souvent inconscients
+                    et hérités de notre histoire passée.</p>
+                    <br>
+                <p class="modal-text brandonthin">Ces mémoires peuvent être
+                    à l’origine de bien des maux comme <strong>un stress, une douleur, une émotion, un comportement
+                        qui
+                        se répète, des croyances limitantes, des problèmes relationnels, un trouble de
+                        l’apprentissage, etc.</strong></p>
+                        <br>
+                <p class="modal-text brandonthin">Ensemble nous mettrons en
+                    lumière <strong>la source de votre problème</strong>, pour vous aider à comprendre votre histoire et à
+                    prendre
+                    conscience de votre fonctionnement, pour mieux vivre votre présent et envisager votre
+                    futur sereinement.</p>
+                    <br>
+                <h3 class="modal-subtitle text-l mt-4 brandonthinTitle text-center darker-title">POUR QUOI ?</h3>
+                <br>
+                <h3 class="modal-subtitle brandonthin">Émotions/Stress :</h3>
+                <p class="modal-text brandonthin">Gestion des émotions, confiance en soi,
+                    estime de soi, stress, mal-être, dépression, burn-out, peurs, angoisses, phobies,
+                    dépendances, blocages, deuil, etc.</p>
+                    <br>
+                <h3 class="modal-subtitle brandonthin">Problématiques relationnelles :</h3>
+                <p class="modal-text brandonthin">Amicales, familiales, de couple ou professionnelles.</p>
+                <br>
+                <h3 class="modal-subtitle brandonthin">Physique :</h3>
+                <p class="modal-text BrandonMedIt"><strong>En complément d’un suivi médical </strong></p>
+                <p class="modal-text brandonthin"> Fatigue, douleurs
+                    physiques
+                    chroniques, psychosomatiques, troubles du sommeil, troubles alimentaires ou digestifs,
+                    prise ou perte de poids, allergies.</p>
+                    <br>
+                <h3 class="modal-subtitle brandonthin">Parentalité :</h3>
+                <p class="modal-text brandonthin">Désir d’enfant, grossesse, post-partum, lien parent/
+                enfant.</p>
+                <br>
+                <h3 class="modal-subtitle brandonthin">Amélioration :</h3>
+                <p class="modal-text brandonthin">Capacités physiques, sportives, préparation aux examens,
+                    difficultés
+                    scolaires, problème de concentration, d’organisation.</p>
+                    <br/>
+                <p class="modal-text brandonthin">La kinésiologie vous accompagne dans tous <strong>les événements
+                    marquants de
+                    votre vie personnelle ou professionnelle</strong> (naissance, séparation, deuil, déménagement, etc.).
+                    C’est aussi un excellent outil de <strong>connaissance de soi et développement personnel</strong>. Vous
+                    n’êtes pas obligé d’avoir un motif pour venir consulter, nous laisserons votre corps
+                    nous guider au cours de la séance.</p>
+                    <br/>
+                <h3 class="modal-subtitle text-l mt-4 brandonthinTitle text-center darker-title">COMBIEN DE SÉANCES SONT
+                    NÉCESSAIRES?</h3>
+                    <br>
+                <p class="modal-text brandonthin">En fonction de votre problématique, plusieurs séances
+                    peuvent être
+                    nécessaires (entre 1 et 3 en général avec au moins un mois d’intervalle entre 2 séances).
+                    Cette décision vous revient et vous restez libre de poursuivre le travail d’une séance à
+                    l’autre, à votre rythme.</p>
+                    <br/>
+                <h3 class="modal-subtitle text-l mt-4 brandonthinTitle text-center darker-title">LA KINÉSIOLOGIE EST
+                    COMPLÉMENTAIRE.</h3>
+                    <br>
+                <p class="modal-text brandonthin">La kinésiologie ne se substitue en aucun cas à la médecine
+                    conventionnelle. Je n’établis aucun diagnostic et ne demande jamais de suspendre un
+                    traitement médical.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Section "Où me trouver ?" -->
+    <section id="ou-me-trouver" class="location-section py-20 px-6">
+        <h2 class="location-title mb-6 brandonthinTitle larger-h2 text-center">Où me trouver ?</h2>
+        <!-- On crée un élément <div> pour contenir la carte. Il doit avoir une hauteur définie (ici 400px) pour être visible. -->
+        <div id="map" class="map-container border-2 rounded-lg"></div>
+    </section>
+
+    <!-- Section "Contact" -->
+    <section id="contact" class="contact-section bg-white py-20 px-6 relative md:relative">
+        <!-- Add 'relative' class here -->
+        <div class="contact-container ">
+            <h2 class="contact-title brandonthinTitle text-center mb-8 larger-title larger-h2">Contact</h2>
+
+            <div class="contact-icons flex justify-center items-center mx-auto rounded-lg">
+                <!-- Icône Facebook -->
+                <div class="icon absolute left-0 ml-4 md:relative md:ml-0">
+                    <a href="https://www.facebook.com/profile.php?id=100092490305063" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="./image/Facebook.svg.png" alt="Facebook" width="50" height="50" />
+                    </a>
+                </div>
+
+                <!-- Informations de contact -->
+                <div class="contact-info font-bold text-center brandonthin larger-text">
+                    <p class="hidden md:block">06 67 66 06 49</p>
+                    <a href="tel:0667660649" class="md:hidden"><img src="./image/appel.png" alt="Appeler" width="50"
+                            height="50" /></a>
+                    <br />
+                    <p class="hidden md:block">cecilecalvinokinesio@gmail.com</p>
+                    <a href="mailto:cecile.kinesio@example.com" class="md:hidden"><img src="./image/email.png"
+                            alt="E-mail" width="50" height="50" /></a>
+                </div>
+
+
+                <!-- Icône Instagram -->
+                <div class="icon absolute right-0 mr-4 md:relative md:mr-0">
+                    <a href="https://www.instagram.com/cecile_calvino_kinesio/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="./image/instagram.svg" alt="Instagram" width="50" height="50" />
+                    </a>
+                </div>
+            </div>
+            <br />
+            <!-- Pied de page -->
+            <footer class="footer text-black px-6 py-4">
+                <p class="footer-text text-center brandonthin larger-text">&copy; 2023 Jerome Bernier - Tous droits
+                    réservés. </p>
+            </footer>
+        </div>
+    </section>
+
+
+    <!-- AOS (Animate on Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

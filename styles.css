@@ -1,0 +1,582 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* styles.css */
+
+@font-face {
+  font-family: 'VanillaRavioli';
+  src: url('./fonts/VanillaRavioli.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Brandon_thin';
+  src: url('./fonts/Brandon_thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'BrandonMedIt';
+  src: url('./fonts/Brandon_med_it.otf') format('opentype');
+}
+
+.vanilla-ravioli {
+  font-family: 'VanillaRavioli', sans-serif;
+  font-size: medium;
+  /* Changement de taille pour mobile first */
+}
+
+.brandonthin {
+  font-family: 'Brandon_thin', sans-serif;
+  font-size: small;
+  /* Changement de taille pour mobile first */
+  font-weight: bold;
+}
+
+.brandonthinTitle {
+  font-family: 'Brandon_thin', sans-serif;
+  font-size: xx-large;
+  /* Changement de taille pour mobile first */
+  font-weight: bold;
+}
+.transparent-white {
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Le dernier paramètre (0.9) définit la transparence (1 = opaque, 0 = transparent) */
+}
+
+.opaque-white {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+/* ALL */
+
+/* taille des polices */
+
+.larger-text {
+  font-size: x-large;
+}
+
+/* Vous pouvez également ajuster la taille de la police pour les titres si nécessaire */
+.larger-title {
+  font-size: xx-large;
+}
+
+.larger-h2 {
+  font-size: 4rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* NAVBAR DESKTOP */
+
+.custom-navbar {
+  background-color: #FAEEDC;
+  border-bottom: 1px solid #D37A63;
+  /* Ajoute une bordure en bas de 1px, de style 'solid' et de couleur #D37A63 */
+}
+
+.custom-logo {
+  height: 4rem;
+  width: 4rem;
+  margin-right: 1.3rem;
+}
+
+.custom-navbar-title {
+  color: #D37A63;
+}
+
+.custom-navbar-link,
+.custom-sidebar-link {
+  color: #D37A63;
+}
+
+.custom-close-btn {
+  font-size: 2em;
+}
+
+
+/*NAVBAR BURGER TEL*/
+
+/* Par défaut, cachez le menu complet et affichez l'icône de burger */
+.menuDesktop {
+  display: none;
+}
+
+#menuBurger {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#menuBurger img {
+  height: 2rem;
+  /* Taille de l'icône */
+  width: 2rem;
+}
+
+
+
+/* Le menu de navigation latéral */
+.navLaterale {
+  height: 100%;
+  /* Hauteur complète */
+  width: 0;
+  /* Largeur 0 - on changera cette valeur avec JavaScript */
+  position: fixed;
+  /* Reste en place */
+  z-index: 1;
+  /* Reste au-dessus */
+  top: 0;
+  /* Reste en haut */
+  right: 0;
+  /* Commence à droite */
+  background-color: #FAEEDC;
+  /* Couleur de fond */
+  overflow-x: hidden;
+  /* Désactive le défilement horizontal */
+  transition: 0.5s;
+  /* Transition de 0.5 seconde pour faire apparaitre le menu latéral */
+}
+
+/* Les liens du menu de navigation */
+.navLaterale a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #D37A63;
+  display: block;
+  transition: 0.3s;
+}
+
+/* Quand on passe la souris sur les liens de navigation, change leur couleur */
+.navLaterale a:hover {
+  color: #f1f1f1;
+}
+
+/* Position et style du bouton de fermeture (coin supérieur droit) */
+.navLaterale .fermerbtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 2em;
+  margin-left: 50px;
+}
+
+/* PHOTO SECTION */
+
+.photo-section {
+  background-image: url('/image/bgPaysage.jpg');
+  background-size: cover;
+  background-color: #FAEEDC;
+}
+
+/* PRESENTATION */
+
+
+.presentation-section {
+  background-color: #FAEEDC;
+}
+
+.presentation-title {
+  font-family: "Brandon_thin", sans-serif;
+  /* Ajout de la police Brandon Thin */
+  color: #D37A63;
+  font-weight: bold;
+
+}
+
+.underline {
+  color: #D37A63;
+}
+
+.text-container {
+  background-color: transparent;
+  /* Enlever la couleur d'arrière-plan */
+  border: none;
+  /* Enlever la bordure */
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.presentation-text {
+  font-size: x-large;
+  color: #333;
+  /* Changer la couleur du texte en adéquation avec le projet */
+
+}
+
+.modal {
+  background-color: #FAEEDC;
+}
+
+.modal-content {
+  color: #D37A63;
+}
+
+.presentation-content {
+  background-color: white;
+  /* ou une couleur blanc cassé, par exemple: #f9f9f9 */
+  padding: 20px;
+  /* ajuster en fonction de vos besoins */
+  border-radius: 10px;
+  /* arrondir les coins */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* ajouter un peu d'ombre */
+}
+
+/* Style par défaut pour la photo (mobile) */
+.kinesio-photo {
+  width: 20rem;
+  height: 20rem;
+}
+
+
+
+
+/* MODALE EN SAVOIR PLUS */
+
+/* La Modale (arrière-plan) */
+.modal {
+  display: none;
+  /* Caché par défaut */
+  position: fixed;
+  /* Reste en place */
+  z-index: 1;
+  /* Se situe au-dessus */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Largeur totale */
+  height: 100%;
+  /* Hauteur totale */
+  overflow: auto;
+  /* Active le défilement si nécessaire */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Noir avec opacité */
+}
+
+/* Contenu de la modale */
+.modal-content {
+  position: relative;
+  background-color: #FAEEDC;
+  margin: 5% auto;
+  padding: 40px 20px 20px 20px;
+  /* Ajout d'un padding en haut pour le bouton de fermeture */
+  border: 1px solid #D37A63;
+  width: 80%;
+  border-radius: 15px;
+  max-width: 600px;
+}
+
+.modal-scroll-content {
+  max-height: 70vh;
+  /* Vous pouvez ajuster cette valeur */
+  overflow: auto;
+}
+
+/* Bouton de fermeture */
+.close {
+  color: #D37A63;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 2;
+  /* S'assurer que le bouton est au-dessus du contenu de la modale */
+}
+
+/* Style du bouton de fermeture lorsqu'il est survolé ou focus */
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Titre de la modale */
+.modal-title {
+  color: #B35A4F;
+  font-size: 2em;
+  margin-bottom: 0.75em;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+/* Sous-titres de la modale */
+.modal-subtitle {
+  color: #D37A63;
+  font-size: 1.8em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* Texte de la modale */
+.modal-text {
+  color: #000;
+  font-size: 1.3em;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.darker-title {
+  color: #B35A4F;
+  text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+
+/* Texte en gras et italique */
+
+.modal-content strong {
+  font-family: 'BrandonMedIt', sans-serif;
+  font-weight: normal;
+}
+
+
+/* PRESTATIONS */
+
+.prestations-section {
+  color: #D37A63;
+  background-color: #FAEEDC;
+}
+
+.prestations-title {
+  font-family: "Brandon_thin", sans-serif;
+  /* Ajout de la police Brandon Thin */
+  color: #D37A63;
+  font-weight: bold;
+
+}
+
+.prestation-text {
+  text-align: justify;
+}
+
+
+/* OU ME TROUVER */
+
+#map {
+  z-index: 1;
+  /* Vous pouvez expérimenter avec différentes valeurs si nécessaire */
+}
+
+.ou-me-trouver-section {
+  color: #D37A63;
+  background-color: #FAEEDC;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+}
+
+.location-title {
+  font-family: "Brandon_thin", sans-serif;
+  /* Ajout de la police Brandon Thin */
+  color: #D37A63;
+  font-weight: bold;
+}
+
+.location-section {
+  color: #D37A63;
+  background-color: #FAEEDC;
+  font-weight: bold;
+}
+
+.map-container {
+  border-color: #D37A63;
+  width: 100%;
+  height: 400px;
+  border-width: 0.1rem;
+}
+
+/* CONTACT + FOOTER */
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/image/bgContact.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* .contact-icons {
+  height:50%;
+  width: 50%;
+  background-color: rgba(241, 238, 237, 0.4);
+  border: 0.1rem solid #D37A63;
+} */
+
+.contact-title {
+  font-family: "Brandon_thin", sans-serif;
+  /* Ajout de la police Brandon Thin */
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #D37A63;
+}
+
+.contact-info {
+  color: #D37A63;
+  text-shadow: 1px 1px 1px #000000;
+  margin: 0 20px;
+  height: 70%;
+  width: 70%;
+  background-color: rgba(241, 238, 237, 0.4);
+  border: 0.1rem solid #D37A63;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+
+/* Utilisation d'une media query pour les écrans d'une largeur maximale de 768px (typiquement tablettes et téléphones) */
+
+.footer-text {
+  color: #000000;
+  text-shadow: 1px 1px 1px #D37A63;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.icon {
+  margin: 10px 1px;
+  /* Vous pouvez ajuster cette valeur en fonction de l'espace que vous souhaitez créer */
+}
+
+
+#contact {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+/* RESPONSIVE MEDIA */
+
+/* POLICE */
+
+/* Ajout de média queries pour adapter la taille de la police et autres éléments pour les grands écrans */
+
+@media screen and (min-width: 768px) {
+  .vanilla-ravioli {
+    font-size: xx-large;
+  }
+
+  .brandonthin {
+    font-size: x-large;
+  }
+}
+
+/* NAV */
+
+/* Affichage du menu burger pour les tablettes et ordinateurs de bureau en affichage fenêtré */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menuDesktop {
+    display: none;
+  }
+
+  #menuBurger {
+    display: block;
+  }
+}
+
+/* Lorsque la taille de l'écran est supérieure à 1024px, affichez le menu complet et cachez l'icône de burger */
+@media screen and (min-width: 1025px) {
+  .menuDesktop {
+    display: block;
+  }
+
+  #menuBurger {
+    display: none;
+  }
+}
+
+/* PRESENTATION */
+
+/* En mode mobile, ajuster la marge et le padding */
+@media screen and (max-width: 768px) {
+  .text-container {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+  }
+}
+
+/* À partir de 768px, augmenter la largeur du cadre */
+@media screen and (min-width: 768px) {
+  .text-container {
+    width: 90%; /* augmenté à 80% pour une meilleure utilisation de l'espace */
+    margin: 0 auto; /* centrage horizontal */
+  }
+}
+
+/* Styles pour les écrans d'au moins 768px de large (tablettes, ordinateurs de bureau) */
+@media screen and (min-width: 48rem) {
+  .kinesio-photo {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+/* Styles pour les écrans d'au moins 1024px de large (ordinateurs de bureau) */
+@media screen and (min-width: 64rem) {
+  .kinesio-photo {
+    width: 25rem;
+    height: 25rem;
+  }
+}
+
+/* MODALE */
+
+
+/* Pour les écrans de taille moyenne (tablettes, etc.) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .modal-content {
+      width: 85%;
+      padding: 35px 18px 18px 18px;
+      font-size: 1.1em;
+      
+  }
+
+  .modal-title {
+      font-size: 1.8em;
+      padding: 0.5em;
+      text-shadow: 2px 2px 2px rgb(255, 255, 255);
+  }
+
+  .close {
+      font-size: 26px;
+  }
+}
+
+/* Pour les petits écrans (moins de 768px) */
+@media screen and (max-width: 768px) {
+  .modal-content {
+      width: 90%;
+      font-size: 1em; /* un exemple, vous pouvez ajuster */
+  }
+
+  .modal-title {
+      font-size: 1.5em;
+      padding: 1rem;
+      text-shadow: 1px 1px 1px rgb(255, 255, 255);
+  }
+
+  .close {
+      font-size: 24px;
+  }
+}
+
+/* CONTACT */
+
+@media screen and (max-width: 768px) {
+  .contact-info {
+    /* Réinitialiser les styles spécifiques */
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+  }
+}
